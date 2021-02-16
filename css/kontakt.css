@@ -1,0 +1,15 @@
+#middle {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+    text-decoration: none;
+    color: #fff;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}

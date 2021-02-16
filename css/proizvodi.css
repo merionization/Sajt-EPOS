@@ -1,0 +1,38 @@
+#pretraga {
+
+    cursor: default;
+    text-align: center;
+
+}
+
+#textfieldPretraga {
+    height: 80%;
+}
+
+.dugme {
+    font-family: serif;
+    color: rgb(0, 0, 0);
+    width: 80px;
+    height: 30px;
+    background-color: #eeb90b;
+    border-radius: 10%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#middle3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5% 15%;
+}
+
+#middle3 .deca {
+    width: 90%;
+    padding: 0 2em;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}

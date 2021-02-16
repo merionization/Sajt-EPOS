@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Andrea's jewellery</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/pocetna.css'>
+    <script src="js/script.js"></script>
+    <script src="js/script4.js"></script>
+    <script>
+        function validacija() {
+    
+    
+            if (document.forms[0].mail.value=='') {
+              alert("Niste uneli e-mail adresu!");
+              document.forms[0].mail.focus();
+              return "Posalji";
+            }
+            if(document.forms[0].mail.value.indexOf('@') == -1)
+            {
+              alert("Niste uneli e-mail adresu u odgovarajucem formatu!");
+              document.forms[0].mail.focus();
+              return "Posalji";
+            }
+            
+            if (!proveriradio(document.forms[0].posetili)) { 
+              alert('Niste selektovali prvo pitanje!');
+              return "Posalji";
+          }
+          
+          return confirm("Hvala sto ste ucestvovali u nasoj anketi,pozdrav! :)");
+          }
+        </script>
+        <script>
+          function proveriradio(dugmici) 
+          {
+            for(var i = 0; i < dugmici.length; i++) {
+              if(dugmici[i].checked) return true;
+            }
+            return false;
+          }
+          var pomocna = false;
+        </script>
+        <script>
+          function proveri(polje) {
+            if (pomocna == false) {
+              for (i = 0; i < polje.length; i++) {
+                polje[i].checked = true;
+              }
+              pomocna = true;
+              return "Obrisi sve cekirane"; 
+            }
+            else {
+              for (i = 0; i < polje.length; i++) {
+                polje[i].checked = false; 
+              }
+              pomocna = false;
+              return "Oznaci sve"; 
+            }
+          } 
+        </script>
+</head>
+<body>
+    <div  class="header" id="header">
+    <img src="slike/logo.png" alt="">
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li ><a href="pocetna.html">Početna</a></li>
+            <li ><a  href="o nama.html">O nama</a></li>
+            <li ><a  href="proizvodi.html">Proizvodi</a></li>
+            <li ><a  href="#"  class=active>Kontakt</a></li>
+        </ul>
+    </nav>
+    <div id="middle">
+        <div class="deca">
+            <h2>Pišite nam!</h2>
+            <p>Ukoliko imate bilo kakvo pitanje za nas popunite sledeću formu i 
+                javićemo Vam se prvom prilikom!
+                </p>
+            <p>
+               <b> Adresa</b> <br>
+    Borska 11
+    
+    Beograd, Srbija
+    <br>
+    <b>E-mail</b> <br>
+    andreinnakit@gmail.com<br>
+    
+    andreinnakitmgmt@gmail.com
+    <br>
+    <b>Telefon</b> <br>
+    011/123345<br>
+    <br>
+    <img src="slike/facebook.jpg" class="slika" width="85" height="85" onclick="popUp1()" >
+    <img src="slike/instagram.jpg" class="slika" width="100" height="100"  onclick="popUp2()" >
+            </p>
+        </div>
+    
+      <form class="forma" onsubmit="return validacija()">
+        <div class="form">
+        <p class="anketa"><b>Kontaktirajte nas</b></p>
+        <b>Da li želite da vas zovemo?</b>
+        <input type="radio" name="posetili" value="da"> Da
+        <input type="radio" name="posetili" value="ne"> Ne
+        <br>
+        <br>
+        <b>Za šta je vezano vaše pitanje?</b>
+        <br>
+        <br> Popravka
+        <input type="checkbox" name="check" value="" />
+        <br>
+        Kupovina
+        <input type="checkbox" name="check" value="" />
+        <br>
+        Ostalo
+        <input type="checkbox" name="check" value="" />
+        <br>
+        <br>
+        <input class="dugme" type="button" value="Oznaci sve" onClick="this.value=proveri(this.form.check)"> 
+        <br>
+        <br>
+        <label> <b>Unesite ime i prezime:</b></label>
+          <br>
+          <input type="text" class="form-control">
+          <br>
+          
+        <b>Unesite e-mail adresu:</b>
+        <br>
+        <input type="text" name="mail" size="35">
+        <br>
+        <br>
+        
+        <b>Za sva pitanja i sugestije, ostavite komentar</b>
+        <br>
+        <textarea name="area" rows="10" cols="30">
+        
+        </textarea>
+        <br>
+        <br>
+        <br>
+        <INPUT class="dugme"  type="submit" value="Posalji" name="submit" onClick="this.value=validacija(this.form.submit)"> 
+        <INPUT class="dugme" type="reset" value="Obrisi podatke" namer="reset">
+        </div>
+        </form>
+        
+        
+    </div>
+    <footer class="foot">
+        <p>
+            <a href="https://www.facebook.com/">
+              <img src="slike/fb.png" style="width:30px;height:30px;border:0">
+            </a>
+        
+            <a href="https://www.youtube.com/">
+              <img src="slike/yt.png" style="width:27px;height:27px;border:0">
+            </a>
+        
+            <a href="https://www.instagram.com/">
+              <img src="slike/ig.png" style="width:30px;height:30px;border:0">
+            </a>   
+        </p>
+        <p>Marija Marinkovic, 2021.</p>
+        <div id="txt"></div>
+    <script>
+        datum();
+        vreme();
+    </script>
+    </footer>
+</body>
+
+</html>

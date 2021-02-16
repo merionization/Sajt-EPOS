@@ -1,0 +1,25 @@
+#onama {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5% 15%;
+}
+
+#onama .deca {
+    width: 90%;
+    padding: 0 2em;
+}
+
+#onama .deca .prikaz {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
